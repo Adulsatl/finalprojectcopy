@@ -1,0 +1,87 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+{% load markdown_extras %}
+
+
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url(/static/images/banner/banner2.jpg);">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Event Details</h1>
+				 </div>
+            </div>
+        </div>
+		<!-- Breadcrumb row -->
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="">Home</a></li>
+					<li>Event Details</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Breadcrumb row END -->
+        <!-- inner page banner END -->
+		<div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1 bg-light">
+                <div class="container">
+					 <div class="row">
+						<div class="col-lg-8 col-md-7 col-sm-12">
+							<div class="courses-post">
+								<div class="ttr-post-media media-effect">
+									<a href="#"><img src="{{ event.image_url }}" alt=""></a>
+								</div>
+								<div class="ttr-post-info">
+									<div class="ttr-post-title ">
+										<h2 class="post-title">{{ event.name }}</h2>
+									</div>
+									<div class="ttr-post-text">
+										<p>{{ event.description }}</p>
+									</div>
+								</div>
+							</div>
+							<div class="courese-overview" id="overview">
+								<div class="row">
+									<div class="col-md-12 col-lg-5">
+										<ul class="course-features">
+											<li><i class="fa fa-book"></i> <span class="label">Topics</span> <span class="value">{{ event.topic }}</span></li>
+											<li><i class="fa fa-user-circle"></i> <span class="label">Host</span> <span class="value">{{ event.host }}</span></li>
+											<li><i class="fa fa-location-arrow"></i> <span class="label">Location</span> <span class="value">{{ event.venue }}</span></li>
+										</ul>
+									</div>
+									<div class="col-md-12 col-lg-7">
+                                        {{ event.markdown_content | markdown | safe }}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-5 col-sm-12 m-b30">
+							<div class="footer-top text-white contact-info-bx m-b30">
+								<h2 class="m-b10 title-head">Contact <span>Information</span></h2>
+                                {% if event.staff_in_charge %}
+								<div class="widget widget_getintuch">
+									<ul>
+										<li><i class="fa fa-user"></i>{{ event.staff_in_charge.name }}</li>
+										<li><i class="fa fa-mobile-phone"></i><a href="callto:{{ event.staff_in_charge.phone_number }}" class="text-white">{{ event.staff_in_charge.phone_number }}</a> </li>
+										<li><i class="fa fa-envelope"></i><a href="mailto:{{ event.staff_in_charge.email }}" class="text-white">{{ event.staff_in_charge.email }}</a></li>
+									</ul>
+								</div>
+                                {% endif %}
+                                {% if event.registration_link %}
+                                    <a class="btn w-100" href="{{ event.registration_link }}">Register Now</a>
+                                {% endif %}
+							</div>
+                        </div>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!-- contact area END -->
+		
+    </div>
+{% endblock content %}

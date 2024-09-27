@@ -1,0 +1,199 @@
+{% load static %}
+<html lang="en">
+<head>
+	<link rel="icon" href="https://lairesit.sirv.com/Images/favicon.png" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="https://lairesit.sirv.com/Images/favicon-new.ico" />
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/admin/css/dashboard-v1.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Ryuga/Department-Website@master/static/dashboard/css/color/color-1.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Ryuga/Department-Website@master/static/dashboard/css/bootstrap.min.css">
+
+
+</head>
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+
+	<!-- header start -->
+	<header class="ttr-header">
+		<div class="ttr-header-wrapper">
+			<div class="ttr-toggle-sidebar ttr-material-button menuBar" data-toggle="tooltip" title="Click for menu!" data-placement="right">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+			<div class="ttr-header-menu">
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="https://christcs.in" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+					</li>
+				</ul>
+			</div>
+			<div class="ttr-header-right ttr-with-seperator">
+				<ul class="ttr-header-navigation">
+					<li>
+						<a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="{{ request.user.student.image_url }}" width="32" height="32"></span></a>
+						<div class="ttr-header-submenu">
+							<ul>
+								<li><a href="{% url 'profile' %}">My profile</a></li>
+								<li><a href="{% url 'settings' %}">Settings</a></li>
+								<li><a href="{% url 'logout' %}">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="ttr-sidebar">
+		<div class="ttr-sidebar-wrapper content-scroll">
+			<div class="ttr-sidebar-logo">
+				<a href="#"><img src="https://lairesit.sirv.com/Images/logo-blue.png" width="122"></a>
+				<div class="ttr-sidebar-toggle-button">
+					<i class="ti-arrow-left"></i>
+				</div>
+			</div>
+			<nav class="ttr-sidebar-navi">
+				<ul>
+					<li>
+						<a href="{% url 'dashboard' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="fa-solid fa-house"></i></span>
+		                	<span class="ttr-label">Dashboard</span>
+		                </a>
+		            </li>
+					<li>
+						<a href="{% url 'profile' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="fa-solid fa-address-card"></i></span>
+		                	<span class="ttr-label">My Profile</span>
+		                </a>
+		            </li>
+					<li>
+						<a href="{% url 'settings' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="fa-solid fa-gear"></i></span>
+		                	<span class="ttr-label">Settings</span>
+		                </a>
+		            </li>
+                    {% if settings and settings.support_enabled %}
+					<li>
+						<a href="#!" class="ttr-material-button" type="button" data-bs-toggle="modal" data-bs-target="#supportModalCenter" >
+							<span class="ttr-icon"><i class="fa-solid fa-headset"></i></span>
+		                	<span class="ttr-label">Support</span>
+		                </a>
+		            </li>
+                    {% endif %}
+                    <hr class="m--1"/>
+                    {% for event in request.user.student.active_events %}
+					<li>
+						<a href="#!" class="ttr-material-button">
+							<span class="ttr-icon"><i class="fa-solid fa-calendar-check"></i></span>
+		                	<span class="ttr-label">{{ event.name }} {% if event.has_registration_open %}&nbsp;<span class="badge bg-dark">open</span>{% endif %}</span>
+		                	<span class="ttr-arrow-icon"><i class="fa-solid fa-caret-down"></i></span>
+		                </a>
+		                <ul>
+                            {% if event.has_registration_open %}
+		                	<li>
+		                		<a href="{% url 'registration' event_link=event.link %}" class="ttr-material-button"><span class="ttr-label"> {% if request.user.is_superuser %}Spot {% endif %}Registration</span></a>
+		                	</li>
+                            {% endif %}
+							<li>
+		                		<a href="{% url 'programs' event_link=event.link %}" class="ttr-material-button"><span class="ttr-label">Programs</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="{% url 'schedule' event_link=event.link %}" class="ttr-material-button"><span class="ttr-label">Schedule</span></a>
+		                	</li>
+                            {% if request.user.is_staff %}
+		                	<li>
+		                		<a href="{% url 'registration_data' event_link=event.link %}" class="ttr-material-button"><span class="ttr-label">Registration Data</span></a>
+		                	</li>
+                            {% endif %}
+		                </ul>
+		            </li>
+                    {% endfor %}
+                    {% if request.user.is_staff %}
+					<li>
+						<a href="{% url 'registration_details_admin' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+		                	<span class="ttr-label">Registration Details</span>
+		                </a>
+		            </li>
+                    {% endif %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+    {% block content %}{% endblock content %}
+
+	<div class="ttr-overlay"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Ryuga/Department-Website@master/static/dashboard/js/admin.js"></script>
+<script src="https://kit.fontawesome.com/7eae56138c.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script>
+    new ClipboardJS('.regIdBtn');
+</script>
+{% block scripts %} {% endblock scripts %}
+
+<div class="modal fade" id="supportModalCenter" tabindex="-1" role="dialog" aria-labelledby="supportModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="supportModalLongTitle">Student Support</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body row">
+          {% if settings and settings.event_support_whatsapp %}
+
+          <div class="col-12">
+            <a href="https://wa.me/+91{{ settings.event_support_whatsapp }}/" class="btn btn-outline-success w-100 mb-2"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+          </div>
+          {% endif %}
+          {% if settings and settings.event_support_instagram %}
+          <div class="col-12">
+            <a href="https://ig.me/m/{{ settings.event_support_instagram }}/" target="_blank" class="btn btn-outline-primary w-100 mb-2"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+          {% endif %}
+          {% if settings and settings.event_support_email %}
+          <div class="col-12">
+            <a href="mailto:{{ settings.event_support_email }}" class="btn btn-outline-dark w-100 mb-2"><i class="fa-solid fa-envelope"></i> Email</a>
+          </div>
+          {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% if not request.user.student.completed_profile_setup %}
+<div class="modal fade" tabindex="-1" id="initialProfileSetupModal" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body bg-transparent">
+        {% include 'dashboard/extendable/profile_data.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function (){
+        $("#initialProfileSetupModal").modal("show");
+    });
+</script>
+{% else %}
+<script>
+     $(document).ready(function(){
+         if (!trackPageLoadForAccustom()) {
+             $('.menuBar').tooltip('enable');
+             $('.menuBar').tooltip('show');
+             setTimeout(function () {
+                 $('.menuBar').tooltip('hide');
+                 $('.menuBar').tooltip('disable');
+             }, 2000);
+         }
+    });
+</script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,1027 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+					
+<head>					
+						<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+	<!-- Button to close the overlay navigation -->
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+	<!-- Overlay content -->
+	<div class="overlay-content">
+		
+		<div class="PopUp-item" id="popup">
+
+			<img src="{{ popupimage.url }}" alt="PopUp images">
+
+		
+
+		
+		</div>
+
+	
+
+	</div>
+  
+  </div>
+  
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <span onclick="openNav()"></span> 
+<style>
+	.carousel-control-prev-icon,
+	.carousel-control-next-icon {
+	  background-size: 100%, 100%;
+	  background-image: none;
+	}
+	
+	.carousel-control-next-icon:after
+	{
+	  content: '>';
+	  font-size: 55px;
+	  font-weight: bolder;
+	  color: white;
+	}
+	
+	.carousel-control-prev-icon:after {
+	  content: '<';
+	  font-size: 55px;
+	  font-weight: bolder;
+	  color: white;
+	}
+	
+	
+	/* The Overlay (background) */
+	.overlay {
+	  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+	  height: 100%;
+	  width: 0;
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  background-color: rgb(0,0,0); /* Black fallback color */
+	  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+	  overflow-x: hidden; /* Disable horizontal scroll */
+	  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+	}
+	
+	/* Position the content inside the overlay */
+	.overlay-content {
+	  position: relative;
+	  top: 25%; /* 25% from the top */
+	  width: 100%; /* 100% width */
+	  text-align: center; /* Centered text/links */
+	  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+	}
+	
+	/* The navigation links inside the overlay */
+	.overlay a {
+	  padding: 8px;
+	  text-decoration: none;
+	  font-size: 36px;
+	  color: #818181;
+	  display: block; /* Display block instead of inline */
+	  transition: 0.3s; /* Transition effects on hover (color) */
+	}
+	
+	/* When you mouse over the navigation links, change their color */
+	.overlay a:hover, .overlay a:focus {
+	  color: #f1f1f1;
+	}
+	
+	/* Position the close button (top right corner) */
+	.overlay .closebtn {
+	  position: absolute;
+	  top: 20px;
+	  right: 45px;
+	  font-size: 60px;
+	}
+	
+	/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+	@media screen and (max-height: 450px) {
+	  .overlay a {font-size: 20px}
+	  .overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	  }
+	}
+	
+	</style>
+<script>
+	function closePopup(id) {
+	  const popup = document.getElementById('popup-' + id);
+	  popup.style.display = 'none';
+	}
+  </script>
+  <!-- Add this script to your index.html template -->
+  <script>
+	  window.onload = function() {
+		  // Get the pop-up element
+		  
+		  openNav();
+  
+		  
+		  var popup = document.getElementById('popup');
+  
+		  // Show the pop-up
+		 if (popup) {
+			  popup.style.display = 'block';
+		  }
+	  };
+  
+  
+	  // new
+	  /* Open when someone clicks on the span element */
+  function openNav() {
+	  document.getElementById("myNav").style.width = "100%";
+	}
+	
+	/* Close when someone clicks on the "x" symbol inside the overlay */
+	function closeNav() {
+	  document.getElementById("myNav").style.width = "0%";
+	}
+	
+  </script>
+    <div class="page-content bg-white">
+        <!-- Main Slider -->
+        <div class="rev-slider">
+			<div id="rev_slider_486_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="news-gallery36" data-source="gallery" style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+				<div id="rev_slider_486_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+					<ul>	<!-- SLIDE  -->
+						<li data-index="rs-100"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="{%  static 'images/slider/slide1.jpg' %}"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="A STUDY ON HAPPINESS"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{%  static 'assets/images/elements/gptcaerial.png' %}" alt=""
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
+								data-no-retina />
+
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-100-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-100-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+									<h2 style="color: white;">Department of Computer Engineering</h2>
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-100-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
+								data-width="none"christ
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Govt.Polytechnic College Nedumangad
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-100-layer-4"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['320','320','320','290']"
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+                                    Established in 2024
+							</div>
+						</li>
+						<li data-index="rs-200"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="https://lairesit.sirv.com/Images/slide2.jpg"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="A STUDY ON HAPPINESS"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							{% comment %} <img src="{%  static 'assets/images/elements/gptcside.jpg' %}"
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
+								data-no-retina /> {% endcomment %}
+
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-200-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;">
+							</div>
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-200-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+									<h2 style="color: white;">Department of Computer Engineering</h2>
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Govt.Polytechnic College Nedumangad
+							</div>
+
+							{% comment %} <!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-4"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['320','320','320','290']"
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+									 Established in 2012
+							</div> {% endcomment %}
+						</li>
+						<li data-index="rs-200"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="https://lairesit.sirv.com/Images/slide3.jpg"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="A STUDY ON HAPPINESS"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{%  static 'assets/images/elements/gptcside.jpg' %}" alt=""
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
+								data-no-retina />
+
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-200-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;">
+							</div>
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-200-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+								<h2 style="color: white;">Department of Computer Engineering</h2>
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Govt.Polytechnic College Nedumangad
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-4"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['320','320','320','290']"
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+									 Established in 2012
+							</div>
+						</li>
+						<li data-index="rs-200"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="https://lairesit.sirv.com/Images/slide4.jpg"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="A STUDY ON HAPPINESS"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{%  static 'assets/images/elements/gptcside.jpg' %}"
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
+								data-no-retina />
+
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-200-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;">
+							</div>
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-200-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+									<h2 style="color: white;">Department of Computer Engineering</h2>
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle tp-resizeme"
+								id="slide-200-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Govt.Polytechnic College Nedumangad
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-4"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['320','320','320','290']"
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+									 Established in 2012
+							</div>
+						<li data-index="rs-200"
+						data-transition="parallaxvertical"
+						data-slotamount="default"
+						data-hideafterloop="0"
+						data-hideslideonmobile="off"
+						data-easein="default"
+						data-easeout="default"
+						data-masterspeed="default"
+						data-thumb="https://lairesit.sirv.com/Images/slide5.jpg"
+						data-rotate="0"
+						data-fstransition="fade"
+						data-fsmasterspeed="1500"
+						data-fsslotamount="7"
+						data-saveperformance="off"
+						data-title="A STUDY ON HAPPINESS"
+						data-param1="" data-param2=""
+						data-param3="" data-param4=""
+						data-param5="" data-param6=""
+						data-param7="" data-param8=""
+						data-param9="" data-param10=""
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{%  static 'assets/images/elements/gptcfront.jpg' %}"
+								data-bgposition="center center"
+								data-bgfit="cover"
+								data-bgrepeat="no-repeat"
+								data-bgparallax="10"
+								class="rev-slidebg"
+								data-no-retina />
+
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper "
+								id="slide-200-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape"
+								data-basealign="slide"
+								data-responsive_offset="off"
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;">
+							</div>
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme"
+								id="slide-200-layer-2"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['250','250','250','240']"
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+									<h2 style="color: white;">Department of Computer Engineering</h2>
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-3"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['210','210','210','210']"
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Govt.Polytechnic College Nedumangad
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme"
+								id="slide-200-layer-4"
+								data-x="['center','center','center','center']"
+								data-hoffset="['0','0','0','0']"
+								data-y="['top','top','top','top']"
+								data-voffset="['320','320','320','290']"
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text"
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+									 Established in 2012
+							</div>
+						</li>
+						</li>
+					</ul>
+				</div><!-- END REVOLUTION SLIDER -->
+			</div>
+		</div>/
+		
+        <!-- Main Slider -->
+		<div class="content-block">
+
+			<!-- Our Services -->
+			<div class="section-area content-inner service-info-bx">
+                <div class="container">
+					<div class="row">
+						<div class="col-md-12 heading-bx left">
+							<h2 class="title-head text-dark">Our <span>Facility</span></h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							<div class="service-bx m-b0">
+								<div class="action-box">
+									<img src="{%static 'assets/images/elements/lab.jpg' %}" alt="">
+								</div>
+								<div class="info-bx text-center">
+									<div class="feature-box-sm radius bg-white">
+										<i class="fa fa-graduation-cap text-primary"></i>
+									</div>
+									<h4>Lab</a></h4>
+									{% comment %} <a href="{% url '' slug='msc-computer-science' %}" class="btn radius-xl">View Course</a> {% endcomment %}
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="service-bx">
+								<div class="action-box">
+									<img src="{%static 'assets/images/elements/gym.jpg' %}" alt="">
+								</div>
+								<div class="info-bx text-center">
+									<div class="feature-box-sm radius bg-white">
+										<i class="fa fa-user-graduate text-primary"></i>
+									</div>
+									<h4>Gymnasium</a></h4>
+									{% comment %} <a href="{% url '' slug='bsc-computer-science' %}" class="btn radius-xl">View Course</a> {% endcomment %}
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="service-bx">
+								<div class="action-box">
+									<img src="https://lairesit.sirv.com/Images/bca.jpg" alt="">
+								</div>
+								<div class="info-bx text-center">
+									<div class="feature-box-sm radius bg-white">
+										<i class="fa fa-graduation-cap text-primary"></i>
+									</div>
+									<h4>Hitech Classrooms</a></h4>
+									{% comment %} <a href="{% url '' slug='bca' %}" class="btn radius-xl">View Course</a> {% endcomment %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div>
+				{% include 'faculty_refresh.html' %}
+				<div class="content-block row">					
+						<div class="action-card col-lg-3 col-md-4 col-sm-5 {{ tag.name }}">
+							<div class="ttr-box portfolio-bx">
+								{% comment %} <div class="ttr-media media-ov2 media-effect"> {% endcomment %}
+									<img src="{{ faculty.image_url }}" alt="{{ faculty.name }}" style="max-width: 100%; height: 100%;">
+									<p>{{ faculty.name }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% if messages %}
+					<div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(https://gptcndd.ac.in/resource/uploads/Slidshow/slide-show-1.png);">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 text-white heading-bx left">
+									<h2 class="title-head text-uppercase">Announcements</h2>
+								</div>
+							</div>
+							{% if messages.count == 1 %}
+								{% for message in messages %}
+								<div class="item">
+									<div class="testimonial-bx">
+										<div class="testimonial-thumb">
+											<img src="{{ message.author.image_url }}" alt="">
+										</div>
+										<div class="testimonial-info">
+											<h5 class="name">{{ message.author.name }}</h5>
+											<p>-{{ message.author.designation }}</p>
+										</div>
+										<div class="testimonial-content">
+											<p>{{ message.content }}</p>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							{% else %}
+							<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+								{% for message in messages %}
+								<div class="item">
+									<div class="testimonial-bx">
+										<div class="testimonial-thumb">
+											<img src="{{ message.author.image_url }}" alt="">
+										</div>
+										<div class="testimonial-info">
+											<h5 class="name">{{ message.author.name }}</h5>
+											<p>-{{ message.author.designation }}</p>
+										</div>
+										<div class="testimonial-content">
+											<p>{{ message.content }}</p>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+					{% endif %}
+		
+					
+														
+						 {% comment %} {% include'includes/loader.html' %} {% endcomment %}
+					</div>	
+			{% if upcoming_events %}
+			<div class="section-area section-sp2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center heading-bx">
+							<h2 class="title-head m-b0">Upcoming <span>Events</span></h2>
+						</div>
+					</div>
+					<div class="row">
+					<div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
+                        {% for event in upcoming_events %}
+						<div class="item">
+                           <a href="{% url 'event_details' slug=event.link %}">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{{ event.image_url }}" alt="">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">{{ event.start_date.day }}</div>
+											<div class="event-month">{{ event.month }}</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="#">{{ event.name }}</a></h4>
+										<ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> {{ event.start_date.time }}</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> {{ event.venue }}</a></li>
+										</ul>
+										<p>{{ event.short_description }}</p>
+									</div>
+								</div>
+							</div></a>
+						</div>
+                        {% endfor %}
+					</div>
+					</div>
+					<div class="text-center">
+						<a href="{% url 'events' %}" class="btn">View All Event</a>
+					</div>
+				</div>
+			</div>
+            {% else %}
+                <br><br><br>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+
+
+   
+
+<script>
+    jQuery(document).ready(function() {
+        var ttrevapi;
+        var tpj =jQuery;
+        if(tpj("#rev_slider_486_1").revolution == undefined){
+            revslider_showDoubleJqueryError("#rev_slider_486_1");
+        }else{
+            ttrevapi = tpj("#rev_slider_486_1").show().revolution({
+                sliderType:"standard",
+                jsFileLocation:"",
+                sliderLayout:"fullwidth",
+                dottedOverlay:"none",
+                delay:9000,
+                navigation: {
+                    keyboardNavigation:"on",
+                    keyboard_direction: "horizontal",
+                    mouseScrollNavigation:"off",
+                    mouseScrollReverse:"default",
+                    onHoverStop:"on",
+                    touch:{
+                        touchenabled:"on",
+                        swipe_threshold: 75,
+                        swipe_min_touches: 1,
+                        swipe_direction: "horizontal",
+                        drag_block_vertical: false
+                    }
+                    ,
+                    arrows: {
+                        style: "uranus",
+                        enable: true,
+                        hide_onmobile: false,
+                        hide_onleave: false,
+                        tmp: '',
+                        left: {
+                            h_align: "left",
+                            v_align: "center",
+                            h_offset: 10,
+                            v_offset: 0
+                        },
+                        right: {
+                            h_align: "right",
+                            v_align: "center",
+                            h_offset: 10,
+                            v_offset: 0
+                        }
+                    },
+
+                },
+                viewPort: {
+                    enable:true,
+                    outof:"pause",
+                    visible_area:"80%",
+                    presize:false
+                },
+                responsiveLevels:[1240,1024,778,480],
+                visibilityLevels:[1240,1024,778,480],
+                gridwidth:[1240,1024,778,480],
+                gridheight:[768,600,600,600],
+                lazyType:"none",
+                parallax: {
+                    type:"scroll",
+                    origo:"enterpoint",
+                    speed:400,
+                    levels:[5,10,15,20,25,30,35,40,45,50,46,47,48,49,50,55],
+                    type:"scroll",
+                },
+                shadow:0,
+                spinner:"off",
+                stopLoop:"off",
+                stopAfterLoops:-1,
+                stopAtSlide:-1,
+                shuffle:"off",
+                autoHeight:"off",
+                hideThumbsOnMobile:"off",
+                hideSliderAtLimit:0,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                debugMode:false,
+                fallbacks: {
+                    simplifyAll:"off",
+                    nextSlideOnWindowFocus:"off",
+                    disableFocusListener:false,
+                }
+            });
+        }
+    });
+	</script>
+
+
+
+
+{% comment %} {% endif %} {% endcomment %}
+{% endblock scripts %}
+
+

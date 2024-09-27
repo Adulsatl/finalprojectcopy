@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% get_static_prefix as d %}
+{% block content %}
+    <div class="page-content bg-white">
+		
+        <!-- Page Heading Box ==== -->
+		<div class="page-banner ovbl-dark" style="background-image: url('{% static "assets/banner/banner3.jpg" %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">About</h1>
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="">Home</a></li>
+					<li>About</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+
+        <!-- Page Content Box ==== -->
+		<div class="content-block">
+            <!-- About Us ==== -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row">
+						 <div class="col-lg-6 m-b30">
+                             <h2>About Us</h2>
+							<p>Government Polytechnic College, Nedumangad Is A Premier Institution Which Excels In The Field Of Technical Education For More Than Three Decades. It Offers Academic Programmes In Various Fields Of Engineering Such As Computer Engineering, Computer Hardware Engineering And Electronics Engineering. It Has A Team Of Vibrant Faculty And Non- Teaching Staff Dedicated To Social Commitment.
+
+								Located Very Near To Nedumangad Town Which Is Remarkable For Its Historical Landmarks Like The Koyikkal Palace And Aruvikkara Dam With Its Picturesque Landscape, It Serves As A Rural College Which Caters To Impart Technical Education To Students From The Rural Areas.
+								
+								Established In The Year 1999, The College View To Mould Competent Engineers Who Are Responsive To Societal Needs. Government Polytechnic College, Nedumangad Strives To Establish Value Based And Need Based Education. With This Objective, The College Has Various Activities That Aims For A Holistic Development In The Students Under The Aegis Of Ncc, Nss And Sports.
+								
+								The Infrastructure Of The Campus Was Upgraded In 2022 With The Inauguration Of A New Academic Block And Workshop Building By The Hon. Higher Education Minister, Dr.r.bindu On 31st October,2022 With A Total Expenditure Of 7.12 Crores. The Foundation Stone For This Block Was Laid By The Former Hon. Higher Education Minister,dr.k.t.jaleel In 2018</p>
+						 </div>
+						 <div class="col-lg-6">
+							 <div class="row">
+								<div class="col-lg-12 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="{{d}}assets/images/icon/icon3.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Our Vision</h5>
+                                            <ul>
+                                                <li>To Be A Center Of Excellence In Education And Research In The Frontier Areas Of Computer Science And Engineering.</li>
+                                                
+                                            </ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="{{d}}/static/images/icon/icon1.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Our Mission</h5>
+                                        <ul>
+                                            <li>To Facilitate Quality Trans-formative Education In Computer Engineering.</li>
+                                            <br>
+                                            <li>To Promote Quality Research And Innovation In Technology</li>
+                                            <br>
+                                            <li>To Transform Students To Competent Professionals To Cater To The Needs Of The Society.</li>
+                                            
+                                        </ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+			<!-- About Us END ==== -->
+			<!-- Why Choose ==== -->
+			
+			<!-- Why Choose END ==== -->
+
+			<div class="section-area section-sp2 popular-courses-bx" id="facultyDetails">
+                
+				{% for faculty in faculties %}
+				<div class="item">
+					<div class="profile-bx text-center">
+						<div class="user-profile-index-thumb">
+							<img src="{{ faculty.image_url }}" alt=""/>
+						</div>
+						<div class="profile-info">
+							<h4>{{ faculty.name }}</h4>
+							<span>{{ faculty.designation }}</span>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+		<div class="section-area section-sp2 popular-courses-bx" id="facultyRefresh">
+			{% comment %} {% include 'includes/loader.html' %} {% endcomment %}
+		</div>
+			</div>
+
+        </div>
+		<!-- Page Content Box END ==== -->
+    </div>
+{% endblock content %}
+{% block scripts %}
+{% endblock scripts %}
